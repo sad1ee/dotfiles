@@ -1,0 +1,33 @@
+# Locations
+export LOCAL_BIN_HOME=${HOME}/.local/bin
+export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME}/git/gitconfig"
+export FZF_DEFAULT_OPTS="$(tr '\n' ' ' < ${XDG_CONFIG_HOME}/fzf/config)"
+
+# History
+export HISTFILE="${XDG_STATE_HOME}/zsh_history"
+export HISTSIZE=5000
+export SAVEHIST=$HISTSIZE
+export HISTDUP=erase
+
+# Defaults
+export EDITOR="nvim"
+export FZF_DEFAULT_COMMAND='fd --type f'
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+
+# SSH
+export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
+
+# PATH
+typeset -U PATH path
+path=( \
+  "$LOCAL_BIN_HOME" \
+  # "${XDG_DATA_HOME}/fzf/bin" \
+  # "$HOME/.cargo/bin" \
+  "$path[@]" \
+)
+export PATH
+
+# TODO: Stoopid tmp nvim fixed
+export LC_ALL="C.UTF-8"
+export LANG="C.UTF-8"
+

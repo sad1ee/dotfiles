@@ -1,0 +1,7 @@
+[user]
+  name = sad1ee
+  email = sad1ee@mailbox.org
+  signingKey = ~/.ssh/sad1ee.pub
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/

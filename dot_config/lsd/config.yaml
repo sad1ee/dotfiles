@@ -1,0 +1,17 @@
+color:
+  theme: custom
+
+blocks:
+  - name
+  - permission
+  - user
+  - group
+  - size
+  - date
+
+date: "+%Y-%m-%d %H:%M"
+
+sorting:
+  dir-grouping: first
+
+total-size: true

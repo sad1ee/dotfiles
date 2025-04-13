@@ -1,0 +1,190 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+final_space = true
+version = 3
+
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+enable_cursor_positioning = true
+
+[palette]
+base = '#232136'
+surface = '#2a273f'
+overlay = '#393552'
+muted = '#6e6a86'
+subtle = '#908caa'
+text = '#e0def4'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ea9a97'
+pine = '#3e8fb0'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+highlight_low = '#2a283e'
+highlight_med = '#44415a'
+highlight_high = '#56526e'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+
+# [[blocks.segments]]
+#   type = 'os'
+#   template = '{{ .Icon }}'
+#   foreground = 'p:muted'
+#   background = 'transparent'
+#   style = 'plain'
+
+[[blocks.segments]]
+type = 'session'
+template = """\
+      {{ if .SSHSession }} \
+      {{ if .Root}}<p:love>{{ .UserName }}</>\
+      {{ else }}{{ .UserName }}{{ end }}\
+      @{{ .HostName }}{{ end }} \
+    """
+foreground = 'p:subtle'
+background = 'transparent'
+style = 'plain'
+
+[[blocks.segments]]
+type = 'path'
+template = '{{ .Path }} '
+foreground = 'p:text'
+background = 'transparent'
+style = 'plain'
+
+[blocks.segments.properties]
+style = 'full'
+home_icon = "<p:gold></>"
+
+[blocks.segments.properties.mapped_locations]
+"~/repos" = "<p:gold></>"
+"~/Seafile" = "<p:gold></>"
+
+[[blocks.segments]]
+type = 'git'
+template = """\
+      ({{ .HEAD }})\
+      <p:rose>{{ if .Working.Changed }} {{ end }}</>\
+      <p:iris>{{ if .Staging.Changed }} {{ end }}</>\
+      <p:foam>{{ if gt .StashCount 0 }} {{ end }}</>\
+      <p:love>{{ if gt .Behind 0 }} ⇣{{ end }}</>\
+      <p:pine>{{ if gt .Ahead 0 }} ⇡{{ end }}</> \
+    """
+foreground = 'p:gold'
+background = 'transparent'
+style = 'plain'
+
+[blocks.segments.properties]
+branch_icon = ''
+commit_icon = '@'
+fetch_status = true
+
+[[blocks.segments]]
+leading_diamond = ''
+trailing_diamond = ' '
+template = '{{ if .Env.POSH_VI_MODE }}{{ .Env.POSH_VI_MODE }}{{ end }}'
+foreground = 'red'
+background = '#3C3836'
+type = 'text'
+style = 'diamond'
+foreground_templates = [
+  "{{if contains \"N\" .Env.POSH_VI_MODE}}blue{{end}}",
+  "{{if contains \"I\" .Env.POSH_VI_MODE}}magenta{{end}}",
+  "{{if contains \"V\" .Env.POSH_VI_MODE}}cyan{{end}}",
+  "{{if contains \"V-L\" .Env.POSH_VI_MODE}}cyan{{end}}",
+  "{{if contains \"R\" .Env.POSH_VI_MODE}}yellow{{end}}",
+]
+
+[[blocks]]
+type = 'prompt'
+alignment = 'right'
+
+[[blocks.segments]]
+type = 'npm'
+template = '[ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}]'
+foreground = 'p:subtle'
+background = 'transparent'
+style = 'plain'
+
+[[blocks.segments]]
+type = 'angular'
+template = '[ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}]'
+foreground = 'p:subtle'
+background = 'transparent'
+style = 'plain'
+
+[[blocks.segments]]
+type = 'node'
+template = """\
+      [{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}\
+      {{ else }} {{ end }}\
+      {{ if .Error }}{{ .Error }}\
+      {{ else }}{{ .Full }}{{ end }}]\
+    """
+foreground = 'p:subtle'
+background = 'transparent'
+style = 'plain'
+
+[[blocks.segments]]
+type = 'python'
+template = """\
+      [ {{ if .Error }}{{ .Error }}\
+      {{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}\
+      {{ .Full }}{{ end }}]\
+    """
+foreground = 'p:subtle'
+background = 'transparent'
+style = 'plain'
+
+[[blocks.segments]]
+type = "project"
+template = """\
+      [{{ if .Error }}{{ .Error }}\
+      {{ else }}{{ if .Name }} {{ .Name }}:{{ end }}\
+      {{ if .Version }}{{.Version}}{{ end }}{{ end }}]\
+    """
+foreground = 'p:subtle'
+background = 'transparent'
+style = "plain"
+
+[[blocks]]
+type = 'rprompt'
+overflow = 'hidden'
+
+[[blocks.segments]]
+type = 'executiontime'
+template = ' 󱎫  {{ .FormattedMs }}'
+foreground = 'p:text'
+background = 'transparent'
+style = 'plain'
+
+[blocks.segments.properties]
+threshold = 5000
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+type = 'text'
+template = '❯'
+background = 'transparent'
+foreground_templates = [
+  '{{if gt .Code 0}}p:love{{end}}',
+  '{{if eq .Code 0}}p:muted{{end}}',
+]
+style = 'plain'
+
+[transient_prompt]
+template = '❯ '
+foreground_templates = [
+  '{{if gt .Code 0}}p:love{{end}}',
+  '{{if eq .Code 0}}p:muted{{end}}',
+]
+background = 'transparent'
+
+[secondary_prompt]
+template = '❯❯ '
+foreground = 'p:subtle'
+background = 'transparent'

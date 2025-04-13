@@ -1,0 +1,5 @@
+--italic-text=always
+--color=always
+--style=numbers
+--line-range=:500
+--theme="base16"

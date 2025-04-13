@@ -1,0 +1,20 @@
+# TODO:
+# - prompt for authorized ssh publickey type (personal or uni)
+
+encryption = "age"
+
+[age]
+identity = "~/.config/age/keys.txt"
+recipient = {{ (rbwFields "KEY - AGE - sad1ee").publickey.value | quote }}
+
+[merge]
+command = "nvim"
+args = [
+  "-d",
+  "{{ "{{" }} .Source {{ "}}" }}",
+  "{{ "{{" }} .Destination {{ "}}" }}"
+]
+
+[data]
+sshPublickey = {{ (rbwFields "KEY - SSH - uni").publickey.value | quote }}
+githubUser = "sad1ee"

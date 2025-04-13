@@ -1,0 +1,37 @@
+[core]
+  editor = nvim
+  excludesfile = ~/.config/git/gitignore
+  autocrlf = input
+
+[init]
+  defaultBranch = main
+
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+
+[pull]
+  rebase = true
+
+[commit]
+  verbose = true
+  gpgSign = true
+
+[push]
+  default = simple
+
+[gpg]
+  format = ssh
+
+[includeIf "gitdir:~/repos/github/"]
+  path = ~/.config/git/github.gitconfig
+
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+  path = ~/.config/git/github.gitconfig
+
+[includeIf "gitdir:~/repos/uni/"]
+  path = ~/.config/git/uni.gitconfig
+

@@ -1,0 +1,6 @@
+ADD ALL RELEVANT SHORTCUTS: nvim, tmux, hyprland
+SUPER + A = Open tofi
+SUPER + H = Focus left window
+SUPER + J = Focus down window
+SUPER + K = Focus up window
+SUPER + L = Focus right window
