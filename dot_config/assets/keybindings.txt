@@ -1,6 +1,41 @@
-ADD ALL RELEVANT SHORTCUTS: nvim, tmux, hyprland
-SUPER + A = Open tofi
-SUPER + H = Focus left window
-SUPER + J = Focus down window
-SUPER + K = Focus up window
-SUPER + L = Focus right window
+----  LAZYVIM ----
+
+ MOD  +  s        | Enter seek mode
+ MOD  +  z  ->  t | Move line the cursor is on to top
+ MOD  +  z  ->  b | Move line the cursor is on to bottom
+ MOD  +  z  ->  z | Move line the cursor is on to middle
+ MOD  +  q  ->  q | Quite all
+ MOD  +  << / >>  | Indent left / right
+ MOD  +  gww      | Format line at line character limit
+ [ / ] + d        | Jump between diagnostic errors up / down
+ MOD  +  Space    | Fuzzy find local files
+ MOD + e -> Back  | In Explorer go one dir up
+ MOD + e -> d     | In Explorer delete file
+ MOD + e -> r     | In Explorer rename file
+ MOD + e -> y / p | In Explorer yank / pase file
+ CTRL +  u       | Scroll up
+ CTRL +  d       | Scroll down
+ CTRL +  o       | Jump to last cursor position
+ CTRL +  i       | Jump to previous cursor position
+ f / F           | Enter find mode down / up (to input)
+ t / T           | Enter til mode down / up (before input)
+ G               | Go to end of file OR line count
+ gc              | Toggle comment for line (followed by motion)
+ .               | Repeat command
+ qq              | Record command
+ Q               | Playback last recorded command
+ u               | Undo
+ CTRL + r        | Redo
+
+-----  TMUX ----
+
+ MOD  +  -        | Vertical split
+ MOD  +  _        | Horizontal split
+
+----  HYPRLAND ----
+
+ MOD  +  a        | Open tofi
+ MOD  +  h        | Focus left window
+ MOD  +  j        | Focus down window
+ MOD  +  k        | Focus up window
+ MOD  +  l        | Focus right window
