@@ -17,7 +17,7 @@ application/vnd.ms-powerpoint=libreoffice-impress.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop;
 
 # File manager
-inode/directory=nautilus.desktop;
+inode/directory=yazi.desktop;
 
 # Terminal emulator (shell scripts & plain text)
 application/x-shellscript=kitty.desktop;

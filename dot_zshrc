@@ -63,7 +63,7 @@ eval "$(chezmoi completion zsh)"
 eval "$(rbw gen-completions zsh)"
 
 # Start tmux
-if [ -z "$TMUX" ]; then
-  tmux attach -t MAIN || tmux new -s MAIN
-fi
+# if [ -z "$TMUX" ]; then
+#   tmux attach -t MAIN || tmux new -s MAIN
+# fi
 

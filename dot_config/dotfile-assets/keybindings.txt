@@ -39,3 +39,31 @@
  MOD  +  j        | Focus down window
  MOD  +  k        | Focus up window
  MOD  +  l        | Focus right window
+
+
+---- YAZI ----
+
+x J                | 5 up in preview
+x K                | 5 down in preview
+x g                | Open go to mode
+x z / Z            | CD via fzf / zoxide
+x SPACE            | Toggle selection of hovered
+x v / V            | Enter selection / unselection mode
+x CTRL + a         | Select all
+x TAB              | Show file infos
+x y                | Copy yank selection
+x x                | Cut yank selection
+x p / P            | Paste / Paste and override
+x d / D            | Trash / Perma delete
+x a                | Create file or folder (end with /)
+x .                | Show hidden files
+x - / _            | Symlink absolute / relative
+x c                | Enter copy mode
+x f                | Filter files
+x /                | Find files
+x n / N            | Next / Previous found file
+x s / S            | Search files (fd) / Search file content (ripgrep)
+x ,                | Enter sort mode
+x t                | New tab
+x Shift + t        | Close tab
+x Shift + h / l    | Switch tab left / right
