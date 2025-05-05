@@ -463,7 +463,7 @@
   "theme.osd.orientation": "horizontal",
   "theme.osd.location": "top",
   "menus.clock.time.military": true,
-  "menus.clock.time.hideSeconds": false,
+  "menus.clock.time.hideSeconds": true,
   "menus.clock.weather.enabled": false,
   "menus.clock.weather.location": "",
   "menus.clock.weather.unit": "metric",
@@ -496,8 +496,8 @@
     "5": "󰭻"
   },
   "bar.windowtitle.truncation_size": 30,
-  "menus.dashboard.powermenu.avatar.image": "/home/user/Pictures/theme/rose-pine-icon.svg",
-  "menus.dashboard.powermenu.avatar.name": "system",
+  "menus.dashboard.powermenu.avatar.image": "/home/user/.config/dotfile-assets/profile-pic-women_rose.png",
+  "menus.dashboard.powermenu.avatar.name": "Sad1ee",
   "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
   "theme.bar.menus.menu.dashboard.profile.radius": "0.4em",
   "menus.dashboard.shortcuts.right.shortcut3.tooltip": "",
@@ -567,5 +567,7 @@
   "theme.bar.buttons.monochrome": false,
   "bar.scrollSpeed": 5,
   "theme.bar.buttons.modules.hyprsunset.enableBorder": false,
-  "bar.customModules.hyprsunset.onIcon": "󱩌"
+  "bar.customModules.hyprsunset.onIcon": "",
+  "bar.customModules.hyprsunset.offIcon": "",
+  "menus.power.lowBatteryThreshold": 15
 }

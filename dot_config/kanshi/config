@@ -1,3 +1,11 @@
+output "Lenovo Group Limited T27hv-20 V3094XRH" {
+  mode 2560x1440@60
+  position 0,0
+  scale 2
+  transform normal
+  alias $WORK
+}
+
 output "Acer Technologies G276HL LW9EE03285E3" {
   mode 1920x1080@60.00
   position -1920,0
@@ -20,6 +28,13 @@ output "BOE 0x0BCA Unknown" {
   transform normal
   scale 2
   alias $INTERNAL
+}
+
+
+profile work {
+  output $INTERNAL disable
+  output $WORK enable
+  exec uwsm app -- $HOME/.config/hypr/scripts/move-workspaces.sh "Lenovo Group Limited T27hv-20 V3094XRH"
 }
 
 profile home_2 {

@@ -1,46 +1,33 @@
+[Added Associations]
+application/x-compressed-tar=tar.desktop;
+
 [Default Applications]
-# Web browser & HTML/PDF
-x-scheme-handler/http=firefox.desktop;
-x-scheme-handler/https=firefox.desktop;
-text/html=firefox.desktop;
-application/pdf=firefox.desktop;
-
-# Email
-x-scheme-handler/mailto=thunderbird.desktop;
-
-# Office suite (LibreOffice)
 application/msword=libreoffice-writer.desktop;
-application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+application/pdf=firefox.desktop;
 application/vnd.ms-excel=libreoffice-calc.desktop;
-application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;
 application/vnd.ms-powerpoint=libreoffice-impress.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop;
-
-# File manager
-inode/directory=yazi.desktop;
-
-# Terminal emulator (shell scripts & plain text)
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+application/x-compressed-tar=tar.desktop;
 application/x-shellscript=kitty.desktop;
-text/plain=kitty.desktop;
-
-# Image viewer
+audio/mpeg=mpv.desktop;
+audio/ogg=mpv.desktop;
 image/bmp=imv.desktop;
 image/gif=imv.desktop;
 image/jpeg=imv.desktop;
 image/png=imv.desktop;
 image/svg+xml=imv.desktop;
-
-# Media player
+inode/directory=nautilus.desktop;
+text/html=firefox.desktop;
+text/plain=kitty.desktop;
 video/mp4=mpv.desktop;
-video/x-matroska=mpv.desktop;
 video/webm=mpv.desktop;
-audio/mpeg=mpv.desktop;
-audio/ogg=mpv.desktop;
-
-# Matrix client (Element)
+video/x-matroska=mpv.desktop;
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;
 x-scheme-handler/matrix=element.desktop;
-
-# Zoom meetings
 x-scheme-handler/zoommtg=zoom.desktop;
-
 x-scheme-handler/discord=vesktop.desktop

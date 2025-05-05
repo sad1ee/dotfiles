@@ -30,3 +30,4 @@ for workspace in $(seq 1 $WORKSPACES); do
 done
 
 hyprctl dispatch workspace 1
+hyprctl reload
