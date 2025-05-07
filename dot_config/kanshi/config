@@ -6,14 +6,6 @@ output "Lenovo Group Limited T27hv-20 V3094XRH" {
   alias $WORK
 }
 
-output "Acer Technologies G276HL LW9EE03285E3" {
-  mode 1920x1080@60.00
-  position -1920,0
-  scale 1
-  transform normal
-  alias $HOME_2
-}
-
 output "Dell Inc. DELL S2721DGF G52TR83" {
   mode 2560x1440@120.00
   position 0,0
@@ -30,18 +22,10 @@ output "BOE 0x0BCA Unknown" {
   alias $INTERNAL
 }
 
-
 profile work {
   output $INTERNAL disable
   output $WORK enable
   exec uwsm app -- $HOME/.config/hypr/scripts/move-workspaces.sh "Lenovo Group Limited T27hv-20 V3094XRH"
-}
-
-profile home_2 {
-  output $INTERNAL disable
-  output $HOME_1 enable
-  output $HOME_2 enable
-  exec uwsm app -- sh -c '$HOME/.config/hypr/scripts/move-workspaces.sh "Dell Inc. DELL S2721DGF G52TR83" "Acer Technologies G276HL LW9EE03285E3"'
 }
 
 profile home_1 {

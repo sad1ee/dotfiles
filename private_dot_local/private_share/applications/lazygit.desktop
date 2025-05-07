@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Lazygit
+GenericName=Git TUI
+Keywords=Git;Gitlab;Github
+Icon=git
+
+Exec=uwsm app -- /home/user/.local/bin/runAsTmuxWindow.sh Lazygit lazygit %u
+
+MimeType=inode/directory

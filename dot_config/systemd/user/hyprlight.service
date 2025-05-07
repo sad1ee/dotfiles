@@ -1,0 +1,12 @@
+# This service unit is for activating hyprlight
+# By kithrat
+
+[Unit]
+Description=Activates hyprsunset to reduce blue light
+
+[Service]
+Type=simple
+ExecStart=/home/user/.local/bin/hyprlight.sh
+
+[Install]
+WantedBy=default.target

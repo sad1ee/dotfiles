@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=btop
+GenericName=System Monitor
+Keywords=system;process;task;manager;cpu;memory;gpu;ram;network;
+Icon=btop
+
+Exec=uwsm app -- /home/user/.local/bin/runAsTmuxWindow.sh btop btop

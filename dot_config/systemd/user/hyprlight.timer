@@ -1,0 +1,12 @@
+# timer for hyprlight service 
+
+[Unit]
+Description=Run hyprlight at 8am and 10pm
+
+[Timer]
+OnCalendar=*-*-* 08:00:10
+OnCalendar=*-*-* 22:00:10
+Persistent=true
+
+[Install]
+WantedBy=timers.target

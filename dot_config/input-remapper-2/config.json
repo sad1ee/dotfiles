@@ -1,4 +1,6 @@
 {
   "version": "2.1.1",
-  "autoload": {}
+  "autoload": {
+    "AT Translated Set 2 keyboard": "Laptop Remappings"
+  }
 }

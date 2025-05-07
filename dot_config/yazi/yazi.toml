@@ -1,0 +1,8 @@
+[manager]
+ratio = [0, 4, 4]
+tab_size = 2
+
+[preview]
+max_width = 2560
+max_height = 1440
+image_delay = 100

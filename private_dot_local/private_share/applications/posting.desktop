@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Posting
+GenericName=TUI HTTP API Client
+Keywords=http; api; openapi;
+Icon=posting
+
+Exec=uwsm app -- /home/user/.local/bin/runAsTmuxWindow.sh Posting posting

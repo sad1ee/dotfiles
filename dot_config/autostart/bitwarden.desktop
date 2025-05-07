@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Bitwarden
+Exec=bitwarden-desktop
+StartupNotify=false
+Terminal=false

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Seafile
+Exec=seafile-applet
+StartupNotify=false
+Terminal=false

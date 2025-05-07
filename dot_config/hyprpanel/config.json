@@ -403,7 +403,7 @@
   "hyprpanel.restartCommand": "uwsm app -- hyprpanel -q; uwsm app -- hyprpanel",
   "menus.transition": "none",
   "menus.transitionTime": 0,
-  "terminal": "uwsm app -- $TERM",
+  "terminal": "uwsm app -- kitty.desktop",
   "bar.layouts": {
     "*": {
       "left": [
@@ -496,7 +496,7 @@
     "5": "󰭻"
   },
   "bar.windowtitle.truncation_size": 30,
-  "menus.dashboard.powermenu.avatar.image": "/home/user/.config/dotfile-assets/profile-pic-women_rose.png",
+  "menus.dashboard.powermenu.avatar.image": "/home/user/.config/dotfile-assets/profile-pic.png",
   "menus.dashboard.powermenu.avatar.name": "Sad1ee",
   "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
   "theme.bar.menus.menu.dashboard.profile.radius": "0.4em",

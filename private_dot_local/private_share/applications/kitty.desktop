@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=kitty
+GenericName=Terminal
+Keywords=console;cli;cmd;
+Icon=kitty
+StartupNotify=true
+
+Exec=uwsm app -- /home/user/.local/bin/isActiveScope.sh kitty
+
+X-TerminalArgExec=--
+X-TerminalArgTitle=--title
+X-TerminalArgAppId=--class
+X-TerminalArgDir=--working-directory
+X-TerminalArgHold=--hold
