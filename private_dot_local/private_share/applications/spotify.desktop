@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify
+GenericName=Music Player
+Icon=spotify-client
+Exec=spotify --force-device-scale-factor=1.6 --uri=%u 
+StartupWMClass=spotify
+
+MimeType=x-scheme-handler/spotify;
