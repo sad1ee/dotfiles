@@ -7,9 +7,9 @@ output "Lenovo Group Limited T27hv-20 V3094XRH" {
 }
 
 output "Dell Inc. DELL S2721DGF G52TR83" {
-  mode 2560x1440@120.00
+  mode 2560x1440@119.99800
   position 0,0
-  scale 1.600000
+  scale 2
   transform normal
   alias $HOME_1
 }
@@ -18,8 +18,18 @@ output "BOE 0x0BCA Unknown" {
   mode 2256x1504@59.99900
   position 0,0
   transform normal
+  # scale 1.566667
   scale 2
   alias $INTERNAL
+}
+
+
+output "Samsung Electric Company SAMSUNG 0x01000E00" {
+  mode 3840x2160@30.00000
+  position 1128,0
+  transform normal
+  scale 3
+  alias $EX1
 }
 
 profile work {
@@ -31,7 +41,14 @@ profile work {
 profile home_1 {
   output $INTERNAL disable
   output $HOME_1 enable
-  exec uwsm app -- $HOME/.config/hypr/scripts/move-workspaces.sh "BOE 0x0BCA"
+  exec uwsm app -- $HOME/.config/hypr/scripts/move-workspaces.sh "Dell Inc. DELL S2721DGF G52TR83"
+}
+
+
+profile home_x {
+  output $INTERNAL disable
+  output $EX1 enable
+  exec uwsm app -- $HOME/.config/hypr/scripts/move-workspaces.sh "Samsung Electric Company SAMSUNG 0x01000E00"
 }
 
 profile internal {

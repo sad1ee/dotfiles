@@ -62,6 +62,8 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(chezmoi completion zsh)"
 eval "$(rbw gen-completions zsh)"
 
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
 # Start tmux
 if [ -z "$TMUX" ]; then
   tmux attach -t MAIN || tmux new -s MAIN

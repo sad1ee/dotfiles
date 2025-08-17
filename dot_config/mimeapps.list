@@ -1,6 +1,8 @@
 [Added Associations]
 inode/directory=yazi.desktop
 inode/directory=lazygit.desktop
+image/svg+xml=firefox.desktop;
+image/webp=imv.desktop;firefox.desktop;
 
 [Default Applications]
 application/x-xar=org.gnome.Nautilus.desktop
@@ -26,13 +28,11 @@ application/x-compress=org.gnome.Nautilus.desktop
 application/zip=org.gnome.Nautilus.desktop
 inode/directory=org.gnome.Nautilus.desktop
 x-content/unix-software=nautilus-autorun-software.desktop
-
 application/x-font-pcf=org.gnome.font-viewer.desktop
 application/x-font-type1=org.gnome.font-viewer.desktop
 font/woff=org.gnome.font-viewer.desktop
 font/otf=org.gnome.font-viewer.desktop
 font/ttf=org.gnome.font-viewer.desktop
-
 application/vnd.oasis.opendocument.graphics-flat-xml=libreoffice-startcenter.desktop
 application/vnd.openofficeorg.extension=libreoffice-startcenter.desktop
 application/vnd.oasis.opendocument.database=libreoffice-base.desktop
@@ -98,12 +98,10 @@ application/vnd.lotus-wordpro=libreoffice-writer.desktop
 application/msword=libreoffice-writer.desktop
 application/x-mswrite=libreoffice-writer.desktop
 application/vnd.sun.xml.writer=libreoffice-writer.desktop
-
 application/x-fictionbook+xml=org.pwmt.zathura.desktop
 application/pdf=org.pwmt.zathura.desktop
 application/epub+zip=org.pwmt.zathura.desktop
 application/oxps=org.pwmt.zathura.desktop
-
 application/vnd.ms-asf=mpv.desktop
 application/smil+xml=mpv.desktop
 application/vnd.apple.mpegurl=mpv.desktop
@@ -157,7 +155,6 @@ video/mp2t=mpv.desktop
 video/mp4=mpv.desktop
 video/3gpp=mpv.desktop
 video/dv=mpv.desktop
-
 image/x-xbitmap=imv.desktop
 image/bmp=imv.desktop
 image/x-portable-pixmap=imv.desktop
@@ -172,7 +169,6 @@ image/gif=imv.desktop
 image/vnd.zbrush.pcx=imv.desktop
 image/x-portable-anymap=imv.desktop
 image/tiff=imv.desktop
-
 image/openraster=gimp.desktop
 image/x-xcursor=gimp.desktop
 image/jp2=gimp.desktop
@@ -187,14 +183,13 @@ image/jxl=gimp.desktop
 image/x-xwindowdump=gimp.desktop
 image/x-xcf=gimp.desktop
 image/x-exr=gimp.desktop
-image/webp=gimp.desktop
+image/webp=firefox.desktop
 image/wmf=gimp.desktop
 image/vnd.adobe.photoshop=gimp.desktop
 image/g3fax=gimp.desktop
-image/svg+xml=gimp.desktop
+image/svg+xml=firefox.desktop
 image/x-sun-raster=gimp.desktop
 image/x-gimp-gih=gimp.desktop
-
 text/tcl=nvim.desktop
 text/x-moc=nvim.desktop
 text/x-java=nvim.desktop
@@ -202,23 +197,22 @@ text/x-csrc=nvim.desktop
 text/x-c++src=nvim.desktop
 text/x-c++hdr=nvim.desktop
 text/plain=nvim.desktop
-text/html=nvim.desktop
+text/html=chromium.desktop
 text/x-chdr=nvim.desktop
 text/x-tex=nvim.desktop
 text/x-makefile=nvim.desktop
 text/x-pascal=nvim.desktop
-
 message/rfc822=org.mozilla.Thunderbird.desktop
 text/vcard=org.mozilla.Thunderbird.desktop
 text/calendar=org.mozilla.Thunderbird.desktop
-
 application/x-zoom=Zoom.desktop
-
 x-scheme-handler/bitwarden=bitwarden.desktop;
 x-scheme-handler/obsidian=obsidian.desktop;
-x-scheme-handler/discord=vesktop.desktop;
-x-scheme-handler/http=firefox.desktop;
-x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
 x-scheme-handler/mailto=thunderbird.desktop;
 x-scheme-handler/matrix=element.desktop;
 x-scheme-handler/zoommtg=zoom.desktop;
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
