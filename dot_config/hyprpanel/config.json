@@ -569,5 +569,8 @@
   "theme.bar.buttons.modules.hyprsunset.enableBorder": false,
   "bar.customModules.hyprsunset.onIcon": "",
   "bar.customModules.hyprsunset.offIcon": "",
-  "menus.power.lowBatteryThreshold": 15
+  "menus.power.lowBatteryThreshold": 15,
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }
