@@ -1,3 +1,3 @@
 # Dotfiles
 
-`sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply sad1ee`
+`sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply sad1ee`

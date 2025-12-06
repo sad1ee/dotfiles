@@ -458,7 +458,7 @@
   "bar.notifications.show_total": true,
   "bar.media.show_active_only": true,
   "theme.bar.enableShadow": false,
-  "bar.notifications.hideCountWhenZero": false,
+  "bar.notifications.hideCountWhenZero": true,
   "notifications.position": "top right",
   "theme.osd.orientation": "horizontal",
   "theme.osd.location": "top",
@@ -543,9 +543,7 @@
   "bar.network.rightClick": "uwsm app -- nm-applet --indicator",
   "theme.bar.buttons.bluetooth.spacing": "0.3em",
   "theme.bar.buttons.battery.spacing": "0.3em",
-  "bar.systray.ignore": [
-    "spotify-client"
-  ],
+  "bar.systray.ignore": [],
   "bar.systray.customIcons": {},
   "theme.bar.buttons.clock.spacing": "0.3em",
   "bar.clock.showIcon": true,
@@ -572,5 +570,6 @@
   "menus.power.lowBatteryThreshold": 15,
   "bar.customModules.storage.paths": [
     "/"
-  ]
+  ],
+  "notifications.autoDismiss": false
 }
