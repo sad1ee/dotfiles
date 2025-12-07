@@ -22,7 +22,9 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # SSH
+{{ if eq .osid "linux-arch" }}
 export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
+{{ end }}
 
 # PATH
 typeset -U PATH path

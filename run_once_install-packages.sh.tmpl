@@ -1,0 +1,48 @@
+#!/bin/sh
+
+set -e
+
+{{ if eq .osid "linux-arch" -}}
+
+if ! command -v yay &>/dev/null; then
+  sudo pacman -S --needed git base-devel
+  git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
+  cd /tmp/yay-bin
+  makepkg -si --noconfirm
+fi
+
+yay -Syu --needed --noconfirm {{ range .packages.arch.yay }}{{ . | quote }} {{ end }}
+
+[ -x /usr/share/tmux-plugin-manager/bin/install_plugins ] &&
+  /usr/share/tmux-plugin-manager/bin/install_plugins
+
+FONT_DIR="$HOME/.local/share/fonts"
+mkdir -p "$FONT_DIR"
+curl -L -o "$FONT_DIR/OleoScript-Regular.ttf" \
+    "https://github.com/google/fonts/raw/main/ofl/oleoscript/OleoScript-Regular.ttf"
+fc-cache -fv
+
+{{ end -}}
+
+{{ if eq .osid "linux-ubuntu" -}}
+
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+
+sudo apt update
+
+sudo apt install -y {{ range .packages.ubuntu.apt }}{{ . | quote }} {{ end }}
+
+if ! command -v oh-my-posh >/dev/null 2>&1; then
+  curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "${HOME}/.local/bin"
+fi
+
+[ -x /usr/share/tmux-plugin-manager/bin/install_plugins ] &&
+  /usr/share/tmux-plugin-manager/bin/install_plugins
+
+FONT_DIR="$HOME/.local/share/fonts"
+mkdir -p "$FONT_DIR"
+curl -L -o "$FONT_DIR/SymbolsNerdFontMono-Regular.ttf" \
+  "https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf"
+fc-cache -fv
+
+{{ end -}}

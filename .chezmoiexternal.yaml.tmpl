@@ -1,0 +1,20 @@
+{{ if eq .osid "linux-ubuntu" }}
+.local/bin/nvim:
+  type: "archive-file"
+  url: {{ gitHubReleaseAssetURL "neovim/neovim" "stable" "nvim-linux-x86_64.tar.gz"}}
+  path: "nvim-linux-x86_64/bin/nvim"
+  executable: true
+  refreshPeriod: "168h"
+
+.local/bin/oh-my-posh:
+  type: "file"
+  url: {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" "latest" "posh-linux-amd64"}}
+  executable: true
+  refreshPeriod: "168h"
+
+.local/bin/zoxide:
+  type: "file"
+  url: {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" "latest" "zoxide_amd64.deb"}}
+  executable: true
+  refreshPeriod: "168h"
+{{ end }}

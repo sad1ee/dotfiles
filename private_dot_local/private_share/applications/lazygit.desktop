@@ -5,6 +5,6 @@ GenericName=Git TUI
 Keywords=Git;Gitlab;Github
 Icon=git
 
-Exec=uwsm app -- /home/user/.local/bin/runAsTmuxWindow.sh Lazygit lazygit %u
+Exec=uwsm app -- /home/user/.local/share/runAsTmuxWindow.sh Lazygit lazygit %u
 
 MimeType=inode/directory

@@ -1,9 +1,14 @@
 # TODO: MV to chezmoi
 # Zinit setup
-ZINIT_HOME="${XDG_DATA_HOME}/zinit/zinit.git"
+{{ if eq .osid "linux-arch" }}
+source "/usr/share/zinit/zinit.zsh"
+{{ end }}
+{{ if eq .osid "linux-ubuntu" }}
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
+{{ end }}
 
 # Zinit plugins
 zinit light zsh-users/zsh-completions
@@ -53,7 +58,12 @@ bindkey '^n' history-search-forward
 bindkey '^f' autosuggest-accept
 # bindkey '^R' fzf-history-widget
 alias cm='chezmoi'
+{{ if eq .osid "linux-arch" }}
+alias y='ranger'
+{{ end }}
+{{ if eq .osid "linux-ubuntu" }}
 alias y='yazi'
+{{ end }}
 
 # Setup shell integrations
 eval "$(oh-my-posh init zsh --config "${XDG_CONFIG_HOME}"/oh-my-posh/config.toml)"

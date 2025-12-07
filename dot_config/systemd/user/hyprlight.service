@@ -6,7 +6,7 @@ Description=Activates hyprsunset to reduce blue light
 
 [Service]
 Type=simple
-ExecStart=/home/user/.local/bin/hyprlight.sh
+ExecStart=/home/user/.local/share/hyprlight.sh
 
 [Install]
 WantedBy=default.target

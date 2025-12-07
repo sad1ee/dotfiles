@@ -5,4 +5,4 @@ GenericName=TUI DB Managment Tool
 Keywords=database;sql;
 Icon=sql
 
-Exec=uwsm app -- /home/user/.local/bin/runAsTmuxWindow.sh Lazysql lazysql
+Exec=uwsm app -- /home/user/.local/share/runAsTmuxWindow.sh Lazysql lazysql

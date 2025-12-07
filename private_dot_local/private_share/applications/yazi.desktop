@@ -5,6 +5,6 @@ GenericName=Terminal File Manager
 Keywords=File;Manager;Explorer;Browser;Launcher
 Icon=yazi
 
-Exec=uwsm app -- /home/user/.local/bin/runAsTmuxWindow.sh Yazi yazi %u
+Exec=uwsm app -- /home/user/.local/share/runAsTmuxWindow.sh Yazi yazi %u
 
 MimeType=inode/directory

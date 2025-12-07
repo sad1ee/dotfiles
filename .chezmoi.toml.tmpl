@@ -1,5 +1,7 @@
-# TODO:
-# - prompt for authorized ssh publickey type (personal or uni)
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
 
 encryption = "age"
 
@@ -17,4 +19,7 @@ args = [
 
 [data]
 sshPublickey = {{ (rbwFields "KEY - SSH - uni").publickey.value | quote }}
-githubUser = "sad1ee"
+osid = {{ $osid | quote }}
+
+[hooks.read-source-state.pre]
+command = ".local/share/chezmoi/.install-rbw.sh"

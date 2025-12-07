@@ -5,4 +5,4 @@ GenericName=Docker TUI
 Keywords=Docker;Compose
 Icon=docker
 
-Exec=uwsm app -- /home/user/.local/bin/runAsTmuxWindow.sh Lazydocker lazydocker
+Exec=uwsm app -- /home/user/.local/share/runAsTmuxWindow.sh Lazydocker lazydocker
