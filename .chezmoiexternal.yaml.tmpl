@@ -8,13 +8,13 @@
 
 .local/bin/oh-my-posh:
   type: "file"
-  url: {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" "latest" "posh-linux-amd64"}}
+  url: {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" "posh-linux-amd64"}}
   executable: true
   refreshPeriod: "168h"
 
 .local/bin/zoxide:
   type: "file"
-  url: {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" "latest" "zoxide_amd64.deb"}}
+  url: {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" "zoxide_amd64.deb"}}
   executable: true
   refreshPeriod: "168h"
 {{ end }}
