@@ -1,17 +1,21 @@
 README.md
 
+{{ if eq .osid "linux-arch" }}
+.config/systemd/user/rbw-agent.service
+{{ end }}
+
 {{ if eq .osid "linux-ubuntu" }}
-dot_config/**
-!dot_config/age
-!dot_config/bat
-!dot_config/btop
-!dot_config/fastfetch
-!dot_config/fzf
-!dot_config/git
-!dot_config/lsd
-!dot_config/nvim
-!dot_config/oh-my-posh
-!dot_config/tmux
-private_dot_local/bin/**
-private_dot_local/share/**
+.config/**
+!.config/age/**
+!.config/bat/**
+!.config/btop/**
+!.config/fastfetch/**
+!.config/fzf/**
+!.config/git/**
+!.config/lsd/**
+!.config/nvim/**
+!.config/oh-my-posh/**
+!.config/tmux/**
+.local/bin/**
+.local/share/**
 {{ end }}
