@@ -26,14 +26,13 @@ packages:
       - "ripgrep"
       - "resvg"
       - "imagemagick"
-      - "ttf-cascadia-code-nerd"
-      - "ttf-cascadia-mono-nerd"
       - "man-db"
       - "man-pages"
       - "age"
       - "fwupd"
       - "powertop"
       - "speedtest-cli"
+      - "chezmoi"
   ubuntu:
     apt:
       - "git"

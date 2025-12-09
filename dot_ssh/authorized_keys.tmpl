@@ -1,1 +1,3 @@
-{{ .sshPublickey }}
+{{ if eq .osid "linux-ubuntu" -}}
+{{ .sshPersonalPublickey }}
+{{ end }}

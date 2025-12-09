@@ -1,20 +1,41 @@
 {{ if eq .osid "linux-ubuntu" }}
 .local/bin/nvim:
   type: "archive-file"
-  url: {{ gitHubReleaseAssetURL "neovim/neovim" "stable" "nvim-linux-x86_64.tar.gz"}}
+  url: {{ gitHubReleaseAssetURL "neovim/neovim" "stable" "nvim-linux-x86_64.tar.gz" }}
   path: "nvim-linux-x86_64/bin/nvim"
   executable: true
   refreshPeriod: "168h"
 
 .local/bin/oh-my-posh:
   type: "file"
-  url: {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" "posh-linux-amd64"}}
+  url: {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" "posh-linux-amd64" }}
   executable: true
   refreshPeriod: "168h"
 
 .local/bin/zoxide:
   type: "file"
-  url: {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" "zoxide_amd64.deb"}}
+  url: {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" "zoxide_*_amd64.deb" }}
+  executable: true
+  refreshPeriod: "168h"
+
+.local/share/zinit/zinit.git:
+  type: "git-repo"
+  url: "https://github.com/zdharma-continuum/zinit.git"
+  refreshPeriod: "168h"
+
+{{ $rbwVer := (gitHubLatestRelease "doy/rbw").TagName }}
+
+.local/bin/rbw:
+  type: "archive-file"
+  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
+  path: "rbw_{{ $rbwVer }}_linux_amd64/rbw"
+  executable: true
+  refreshPeriod: "168h"
+
+.local/bin/rbw-agent:
+  type: "archive-file"
+  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
+  path: "rbw_{{ $rbwVer }}_linux_amd64/rbw-agent"
   executable: true
   refreshPeriod: "168h"
 {{ end }}

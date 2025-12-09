@@ -18,7 +18,7 @@ args = [
 ]
 
 [data]
-sshPublickey = {{ (rbwFields "KEY - SSH - uni").publickey.value | quote }}
+sshPersonalPublickey = {{ (rbwFields "KEY - SSH - personal").publickey.value | quote }}
 osid = {{ $osid | quote }}
 
 [hooks.read-source-state.pre]
