@@ -6,8 +6,8 @@
 encryption = "age"
 
 [age]
-  identity = "~/.config/age/public.txt"
-  recipientsFile = "~/.config/age/private.txt"
+  identity = "~/.config/age/private.txt"
+  recipientsFile = "~/.config/age/public.txt"
 
 [merge]
   command = "nvim"
@@ -18,7 +18,6 @@ encryption = "age"
   ]
 
 [data]
-  sshPersonalPublickey = {{ (rbwFields "KEY - SSH - personal").publickey.value | quote }}
   osid = {{ $osid | quote }}
 
 [hooks.read-source-state.pre]

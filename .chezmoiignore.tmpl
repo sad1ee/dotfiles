@@ -1,10 +1,6 @@
 README.md
 
-{{ if eq .osid "linux-arch" }}
-.config/systemd/user/rbw-agent.service
-{{ end }}
-
-{{ if eq .osid "linux-ubuntu" }}
+{{ if ne .osid "linux-arch" }}
 .config/**
 !.config/age/**
 !.config/bat/**

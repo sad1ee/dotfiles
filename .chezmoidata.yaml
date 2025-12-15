@@ -6,6 +6,7 @@ packages:
       - "git"
       - "curl"
       - "zsh"
+      - "unzip"
       - "zinit"
       - "nvim"
       - "bat"
@@ -37,6 +38,7 @@ packages:
     apt:
       - "git"
       - "curl"
+      - "unzip"
       - "fd-find"
       - "ripgrep"
       - "ranger"

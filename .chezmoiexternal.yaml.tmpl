@@ -23,19 +23,19 @@
   url: "https://github.com/zdharma-continuum/zinit.git"
   refreshPeriod: "168h"
 
-{{ $rbwVer := (gitHubLatestRelease "doy/rbw").TagName }}
-
-.local/bin/rbw:
-  type: "archive-file"
-  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
-  path: "rbw_{{ $rbwVer }}_linux_amd64/rbw"
-  executable: true
-  refreshPeriod: "168h"
-
-.local/bin/rbw-agent:
-  type: "archive-file"
-  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
-  path: "rbw_{{ $rbwVer }}_linux_amd64/rbw-agent"
-  executable: true
-  refreshPeriod: "168h"
+# {{ $rbwVer := (gitHubLatestRelease "doy/rbw").TagName }}
+#
+# .local/bin/rbw:
+#   type: "archive-file"
+#   url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
+#   path: "rbw_{{ $rbwVer }}_linux_amd64/rbw"
+#   executable: true
+#   refreshPeriod: "168h"
+#
+# .local/bin/rbw-agent:
+#   type: "archive-file"
+#   url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
+#   path: "rbw_{{ $rbwVer }}_linux_amd64/rbw-agent"
+#   executable: true
+#   refreshPeriod: "168h"
 {{ end }}
