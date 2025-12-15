@@ -6,8 +6,8 @@
 encryption = "age"
 
 [age]
-  identity = "~/.config/age/keys.txt"
-  recipient = {{ (rbwFields "KEY - AGE - sad1ee").publickey.value | quote }}
+  identity = "~/.config/age/public.txt"
+  recipientsFile = "~/.config/age/private.txt"
 
 [merge]
   command = "nvim"

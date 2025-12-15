@@ -65,12 +65,28 @@ install_ubuntu() {
   mayhaps_sudo apt install -y "$tmp_deb"
 }
 
+rbw_login() {
+  read -p '[RBW] Email: ' emailInput
+  rbw config set email "$emailInput"
+  rbw login
+}
+
+setup_age() {
+  mkdir -p "${HOME}/.config/age"
+  echo "[\"$(rbw get "KEY - AGE - sad1ee" --field publickey)\"]" >${HOME}/.config/age/public.txt
+  rbw get "KEY - AGE - sad1ee" --field privatekey >${HOME}/.config/age/private.txt
+}
+
 case "$ID" in
 arch)
   install_arch
+  rbw_login
+  setup_age
   ;;
 ubuntu)
   install_ubuntu
+  rbw_login
+  setup_age
   ;;
 *)
   echo "[RBW] Unsupported distro: $ID"
