@@ -18,7 +18,7 @@ USER_NAME="$(whoami)"
 
 mayhaps_sudo() {
   case "$USER_NAME" in
-  root)
+  "root")
     "$@"
     ;;
   *)
