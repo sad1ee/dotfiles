@@ -1,51 +1,79 @@
 #!/bin/sh
 
-set -e
+set -eu
 
-# exit immediately if password-manager-binary is already in $PATH
-type rbw >/dev/null 2>&1 && exit
+# Exit if rbw is in $PATH and works
+command -v rbw >/dev/null 2>&1 && exit 0
 
-if [ -f /etc/os-release ]; then
+# Get OS
+if [ -r /etc/os-release ]; then
   . /etc/os-release
+else
+  echo "[RBW] Cannot detect OS"
+  exit 1
 fi
 
-case "$ID" in
-"arch")
-  sudo pacman -S --noconfirm rbw
-  ;;
-"ubuntu")
+# Get user
+USER_NAME="$(whoami)"
+
+mayhaps_sudo() {
+  case "$USER_NAME" in
+  root)
+    "$@"
+    ;;
+  *)
+    sudo "$@"
+    ;;
+  esac
+}
+
+install_arch() {
+  mayhaps_sudo pacman -Fy
+  mayhaps_sudo pacman -S --noconfirm rbw
+}
+
+install_ubuntu() {
+  mayhaps_sudo apt update
+
+  command -v curl >/dev/null 2>&1 || mayhaps_sudo apt install -y curl
+  command -v minisign >/dev/null 2>&1 || mayhaps_sudo apt install -y minisign
+
   RBW_URL="https://git.tozt.net/rbw/releases/deb/"
   RBW_MINISIGN_PUBKEY="RWTM0AZ5RpROOfAIWx1HvYQ6pw1+FKwN6526UFTKNImP/Hz3ynCFst3r"
 
-  sudo apt update
-  sudo apt install -y curl minisign
-
-  latest_deb=$(curl -s "$RBW_BASE_URL" |
+  latest_deb="$(curl -fsSL "$RBW_URL" |
     grep -oP 'href="rbw_[0-9]+\.[0-9]+\.[0-9]+_amd64\.deb"' |
     sed 's/^href="//;s/"$//' |
     sort -V |
-    tail -1)
+    tail -1)"
 
   if [ -z "$latest_deb" ]; then
-    echo "Failed to find a .deb file in $BASE_URL"
+    echo "[RBW] No matching rbw .deb found."
     exit 1
   fi
 
   tmp_deb="/tmp/$latest_deb"
   tmp_sig="${tmp_deb}.minisig"
 
-  curl -sL -o "$tmp_deb" "${RBW_BASE_URL}${latest_deb}"
-  curl -sL -o "$tmp_sig" "${RBW_BASE_URL}${latest_deb}.minisig"
+  trap 'rm -f "$tmp_deb" "$tmp_sig"' EXIT INT TERM
 
-  minisign -p "$RBW_MINISIGN_PUBKEY" -V -m "$tmp_deb" -x "$tmp_sig" || {
-    echo "Signature verification failed."
-    exit 1
-  }
+  curl -fsSL -o "$tmp_deb" "${RBW_URL}${latest_deb}"
+  curl -fsSL -o "$tmp_sig" "${RBW_URL}${latest_deb}.minisig"
 
-  sudo dpkg -i "$tmp_deb"
+  minisign -P "$RBW_MINISIGN_PUBKEY" -V -m "$tmp_deb" -x "$tmp_sig"
+
+  mayhaps_sudo apt install -y "$tmp_deb"
+}
+
+case "$ID" in
+arch)
+  install_arch
+  ;;
+ubuntu)
+  install_ubuntu
   ;;
 *)
-  echo "Unsupported distro: $ID"
+  echo "[RBW] Unsupported distro: $ID"
   exit 1
   ;;
 esac

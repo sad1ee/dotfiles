@@ -3,14 +3,9 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-
-# Locations
 export LOCAL_BIN_HOME="${HOME}/.local/bin"
-export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME}/git/gitconfig"
-export FZF_DEFAULT_OPTS="$(tr '\n' ' ' < ${XDG_CONFIG_HOME}/fzf/config)"
-export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 
-# History
+# ZSH
 export HISTFILE="${XDG_STATE_HOME}/zsh_history"
 export HISTSIZE=5000
 export SAVEHIST=$HISTSIZE
@@ -18,8 +13,11 @@ export HISTDUP=erase
 
 # Defaults
 export EDITOR="nvim"
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND"ftb-tmux-popup"
+# export FZF_DEFAULT_COMMAND='fd --type f'
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME}/git/gitconfig"
+export FZF_DEFAULT_OPTS="$(tr '\n' ' ' < ${XDG_CONFIG_HOME}/fzf/config)"
 
 # SSH
 {{ if eq .osid "linux-arch" }}
@@ -30,8 +28,6 @@ export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
 typeset -U PATH path
 path=( \
   "$LOCAL_BIN_HOME" \
-  # "${XDG_DATA_HOME}/fzf/bin" \
-  # "$HOME/.cargo/bin" \
   "$path[@]" \
 )
 export PATH

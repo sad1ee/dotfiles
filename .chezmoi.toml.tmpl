@@ -6,20 +6,20 @@
 encryption = "age"
 
 [age]
-identity = "~/.config/age/keys.txt"
-recipient = {{ (rbwFields "KEY - AGE - sad1ee").publickey.value | quote }}
+  identity = "~/.config/age/keys.txt"
+  recipient = {{ (rbwFields "KEY - AGE - sad1ee").publickey.value | quote }}
 
 [merge]
-command = "nvim"
-args = [
-  "-d",
-  "{{ "{{" }} .Source {{ "}}" }}",
-  "{{ "{{" }} .Destination {{ "}}" }}"
-]
+  command = "nvim"
+  args = [
+    "-d",
+    "{{ "{{" }} .Source {{ "}}" }}",
+    "{{ "{{" }} .Destination {{ "}}" }}"
+  ]
 
 [data]
-sshPersonalPublickey = {{ (rbwFields "KEY - SSH - personal").publickey.value | quote }}
-osid = {{ $osid | quote }}
+  sshPersonalPublickey = {{ (rbwFields "KEY - SSH - personal").publickey.value | quote }}
+  osid = {{ $osid | quote }}
 
 [hooks.read-source-state.pre]
-command = ".local/share/chezmoi/.install-rbw.sh"
+  command = ".local/share/chezmoi/.install-rbw.sh"

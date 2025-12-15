@@ -14,4 +14,9 @@ date: "+%Y-%m-%d %H:%M"
 sorting:
   dir-grouping: first
 
-total-size: true
+total-size: false
+
+header: false
+
+recursion:
+  enabled: false

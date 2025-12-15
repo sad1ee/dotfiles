@@ -1,4 +1,3 @@
-# TODO: MV to chezmoi
 # Zinit setup
 {{ if eq .osid "linux-arch" -}}
 source "/usr/share/zinit/zinit.zsh"
@@ -7,8 +6,13 @@ source "/usr/share/zinit/zinit.zsh"
 source "${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git/zinit.zsh"
 {{ end -}}
 
+export ZSH_COMPDUMP="${XDG_CACHE_HOME}/zsh/cache/.zcompdump"
+
 # Zinit plugins
 zinit light zsh-users/zsh-completions
+{{ if eq .osid "linux-arch" }}
+fpath=(/opt/vagrant/embedded/gems/gems/vagrant-*/contrib/zsh $fpath)
+{{ end }}
 autoload -Uz compinit && compinit
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
@@ -28,13 +32,21 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Set completion and fzf-tab style
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/.zcompcache"
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu yes
+zstyle ':completion:*' menu no
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
-zstyle ':fzf-tab:complete:*' fzf-preview 'bat --color=always --style=plain --paging=never --line-range=:500 $realpath 2>/dev/null || lsd --color=always $realpath'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd $realpath'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:*' accept-line enter
+zstyle ':fzf-tab:*' continuous-trigger '/'
+# zstyle ':fzf-tab:complete:*' fzf-preview 'bat --color=always --style=plain --paging=never --line-range=:500 $realpath 2>/dev/null || lsd -1 --color=always $realpath'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath'
 zstyle ':fzf-tab:*' fzf-pad 4
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Set aliases
 alias c='clear'
@@ -42,8 +54,8 @@ alias vim="nvim"
 alias v="nvim"
 alias ls='lsd'
 alias la='lsd -A'
-alias ll='lsd -lA --header'
-alias lt='lsd -A --tree --header'
+alias ll='lsd -lAg'
+alias lt='lsd -A -I .git -I .ansible -I .vagrant --tree --depth 3'
 alias cat='bat --paging=never'
 alias less='bat --paging=always'
 alias diff='bat --diff --diff-context 4'
@@ -69,10 +81,7 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(chezmoi completion zsh)"
 eval "$(rbw gen-completions zsh)"
 
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-
 # Start tmux
 if [ -z "$TMUX" ]; then
   tmux attach -t MAIN || tmux new -s MAIN
 fi
-
