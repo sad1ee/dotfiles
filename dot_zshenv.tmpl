@@ -13,16 +13,15 @@ export HISTDUP=erase
 
 # Defaults
 export EDITOR="nvim"
-export FZF_DEFAULT_COMMAND"ftb-tmux-popup"
-# export FZF_DEFAULT_COMMAND='fd --type f'
+# export FZF_DEFAULT_COMMAND"ftb-tmux-popup"
+export FZF_DEFAULT_COMMAND='fd --type f'
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME}/git/gitconfig"
 export FZF_DEFAULT_OPTS="$(tr '\n' ' ' < ${XDG_CONFIG_HOME}/fzf/config)"
 
 # SSH
-{{ if eq .osid "linux-arch" }}
-export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
-{{ end }}
+export SSH_AUTH_SOCK="${LOCAL_BIN_HOME}/rbw/ssh-agent"
+# export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
 
 # PATH
 typeset -U PATH path
