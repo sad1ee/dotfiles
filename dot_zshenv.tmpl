@@ -20,7 +20,7 @@ export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME}/git/gitconfig"
 export FZF_DEFAULT_OPTS="$(tr '\n' ' ' < ${XDG_CONFIG_HOME}/fzf/config)"
 
 # SSH
-export SSH_AUTH_SOCK="${LOCAL_BIN_HOME}/rbw/ssh-agent"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/rbw/ssh-agent-socket"
 # export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
 
 # PATH
