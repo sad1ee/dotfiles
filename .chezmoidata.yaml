@@ -50,4 +50,3 @@ packages:
       - "lsd"
       - "age"
       - "powertop"
-      - "intel_gpu_tools"

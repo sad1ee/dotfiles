@@ -1,29 +1,28 @@
 {{ if eq .osid "linux-ubuntu" }}
 .local/bin/nvim:
   type: "archive-file"
-  url: {{ gitHubReleaseAssetURL "neovim/neovim" "stable" "nvim-linux-x86_64.tar.gz" }}
+  url: {{ gitHubReleaseAssetURL "neovim/neovim" "stable" "nvim-linux-x86_64.tar.gz" | quote }}
   path: "nvim-linux-x86_64/bin/nvim"
   executable: true
   refreshPeriod: "168h"
 
 .local/bin/oh-my-posh:
   type: "file"
-  url: {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" "posh-linux-amd64" }}
+  url: {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" "posh-linux-amd64" | quote }}
   executable: true
   refreshPeriod: "168h"
 
 .local/bin/zoxide:
-  type: "file"
-  url: {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" "zoxide_*_amd64.deb" }}
+  type: "archive-file"
+  url: {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" "zoxide-*-x86_64-unknown-linux-musl.tar.gz" | quote }}
+  path: "zoxide"
   executable: true
   refreshPeriod: "168h"
 
-{{ $fzfVer := trimPrefix "v" (gitHubLatestRelease "junegunn/fzf").TagName }}
-
 .local/bin/fzf:
   type: "archive-file"
-  url: {{ gitHubLatestReleaseAssetURL "junegunn/fzf" "fzf-*-linux_amd64.tar.gz" }}
-  path: "fzf-{{ $fzfVer }}-linux_amd64/fzf"
+  url: {{ gitHubLatestReleaseAssetURL "junegunn/fzf" "fzf-*-linux_amd64.tar.gz" | quote }}
+  path: "fzf"
   executable: true
   refreshPeriod: "168h"
 
@@ -32,19 +31,17 @@
   url: "https://github.com/zdharma-continuum/zinit.git"
   refreshPeriod: "168h"
 
-{{ $rbwVer := (gitHubLatestRelease "doy/rbw").TagName }}
-
 .local/bin/rbw:
   type: "archive-file"
-  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
-  path: "rbw_{{ $rbwVer }}_linux_amd64/rbw"
+  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" | quote }}
+  path: "rbw"
   executable: true
   refreshPeriod: "168h"
 
 .local/bin/rbw-agent:
   type: "archive-file"
-  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" }}
-  path: "rbw_{{ $rbwVer }}_linux_amd64/rbw-agent"
+  url: {{ gitHubLatestReleaseAssetURL "doy/rbw" "rbw_*_linux_amd64.tar.gz" | quote }}
+  path: "rbw-agent"
   executable: true
   refreshPeriod: "168h"
 {{ end }}
