@@ -49,4 +49,6 @@ packages:
       - "fastfetch"
       - "lsd"
       - "age"
-      - "powertop"
+      - "nodejs"
+      - "npm"
+      - "golang"
