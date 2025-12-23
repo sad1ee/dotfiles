@@ -85,6 +85,10 @@ fi
 # [ -x /usr/share/tmux-plugin-manager/bin/install_plugins ] &&
 #   /usr/share/tmux-plugin-manager/bin/install_plugins
 
+
+[ -x ${HOME}/.local/share/tmux/tpm/bin/install_plugins] &&
+  ${HOME}/.local/share/tmux/tpm/bin/install_plugins
+
 # FONT_DIR="$HOME/.local/share/fonts"
 # mkdir -p "$FONT_DIR"
 # curl -L -o "$FONT_DIR/SymbolsNerdFontMono-Regular.ttf" \
@@ -99,11 +103,10 @@ fi
 
 chsh -s $(which zsh)
 
+rbw_path=$(command -v rbw 2>/dev/null || true)
 
-if command -v rbw >/dev/null 2>&1; then
-  mayhaps_sudo apt remove -y rbw
+if [ -n "$rbw_path" ] && [ "$rbw_path" != "/home/user/.local/bin/rbw" ]; then
+    mayhaps_sudo apt remove -y rbw
 fi
-
-# sudo apt remove rbw
 
 {{ end -}}

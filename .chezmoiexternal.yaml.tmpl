@@ -1,8 +1,7 @@
-{{ if eq .osid "linux-ubuntu" }}
+{{ if ne .osid "linux-arch" }}
 .local/bin/nvim:
-  type: "archive-file"
-  url: {{ gitHubReleaseAssetURL "neovim/neovim" "stable" "nvim-linux-x86_64.tar.gz" | quote }}
-  path: "nvim-linux-x86_64/bin/nvim"
+  type: "file"
+  url: {{ gitHubReleaseAssetURL "neovim/neovim" "stable" "nvim-linux-x86_64.appimage" | quote }}
   executable: true
   refreshPeriod: "168h"
 
@@ -29,6 +28,11 @@
 .local/share/zinit/zinit.git:
   type: "git-repo"
   url: "https://github.com/zdharma-continuum/zinit.git"
+  refreshPeriod: "168h"
+
+.local/share/tmux/tpm:
+  type: "git-repo"
+  url: "https://github.com/tmux-plugins/tpm"
   refreshPeriod: "168h"
 
 .local/bin/rbw:

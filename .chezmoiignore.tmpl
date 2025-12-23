@@ -1,7 +1,7 @@
 README.md
 
 {{ if ne .osid "linux-arch" }}
-.config/**
+.config/*
 !.config/age
 !.config/bat
 !.config/btop
@@ -12,7 +12,8 @@ README.md
 !.config/nvim
 !.config/oh-my-posh
 !.config/tmux
-.local/**
+.local/*
 !.local/bin
 !.local/share/zinit
+!.local/share/tmux
 {{ end }}
