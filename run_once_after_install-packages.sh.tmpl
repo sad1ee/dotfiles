@@ -99,7 +99,10 @@ fi
 
 chsh -s $(which zsh)
 
-mayhaps_sudo apt remove -y rbw
+
+if command -v rbw >/dev/null 2>&1; then
+  mayhaps_sudo apt remove -y rbw
+fi
 
 # sudo apt remove rbw
 

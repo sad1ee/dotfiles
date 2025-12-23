@@ -1,0 +1,5 @@
+return {
+  {
+    "HiPhish/jinja.vim",
+  },
+}
