@@ -44,7 +44,6 @@ packages:
       - "zsh"
       - "bat"
       - "tmux"
-      - "tmux-plugin-manager"
       - "btop"
       - "fastfetch"
       - "lsd"

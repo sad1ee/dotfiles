@@ -10,9 +10,9 @@ export ZSH_COMPDUMP="${XDG_CACHE_HOME}/zsh/cache/.zcompdump"
 
 # Zinit plugins
 zinit light zsh-users/zsh-completions
-{{ if eq .osid "linux-arch" }}
+{{ if eq .osid "linux-arch" -}}
 fpath=(/opt/vagrant/embedded/gems/gems/vagrant-*/contrib/zsh $fpath)
-{{ end }}
+{{ end -}}
 autoload -Uz compinit && compinit
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
@@ -43,8 +43,8 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' accept-line enter
 zstyle ':fzf-tab:*' continuous-trigger '/'
-# zstyle ':fzf-tab:complete:*' fzf-preview 'bat --color=always --style=plain --paging=never --line-range=:500 $realpath 2>/dev/null || lsd -1 --color=always $realpath'
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:*' fzf-preview 'bat --color=always --style=plain --paging=never --line-range=:500 $realpath 2>/dev/null || lsd -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath'
 zstyle ':fzf-tab:*' fzf-pad 4
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
@@ -67,21 +67,24 @@ bindkey '^n' history-search-forward
 bindkey '^f' autosuggest-accept
 # bindkey '^R' fzf-history-widget
 alias cm='chezmoi'
-{{ if eq .osid "linux-arch" }}
-alias y='ranger'
-{{ end }}
-{{ if eq .osid "linux-ubuntu" }}
+{{ if eq .osid "linux-arch" -}}
 alias y='yazi'
-{{ end }}
 
+{{ end -}}
+{{ if ne .osid "linux-arch" -}}
+alias y='ranger'
+
+{{ end -}}
 # Setup shell integrations
 eval "$(oh-my-posh init zsh --config "${XDG_CONFIG_HOME}"/oh-my-posh/config.toml)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(chezmoi completion zsh)"
 eval "$(rbw gen-completions zsh)"
+{{- if eq .osid "linux-arch" }}
 
 # Start tmux
 if [ -z "$TMUX" ]; then
   tmux attach -t MAIN || tmux new -s MAIN
 fi
+{{ end -}}
