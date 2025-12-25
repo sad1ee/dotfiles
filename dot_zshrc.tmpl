@@ -67,6 +67,24 @@ bindkey '^n' history-search-forward
 bindkey '^f' autosuggest-accept
 # bindkey '^R' fzf-history-widget
 alias cm='chezmoi'
+
+alias dsta='docker container start'
+alias dstp='docker container stop'
+alias dstpa='docker container stop $(docker ps -q)'
+alias drs='docker container restart'
+alias drsa='docker container restart $(docker ps -q)'
+alias dls='docker container ls --format "table \{\{.Names}}\t\{\{.Status\}\}\t\{\{.Ports\}\}"'
+alias dlsa='docker container ls -a --format "table \{\{.Names}}\t\{\{.Status\}\}\t\{\{.Ports\}\}"'
+alias dlog='docker container logs'
+alias drm='docker container rm'
+alias drmf='docker container rm -f'
+alias dils='docker image ls'
+alias dnls='docker network ls'
+alias dvls='docker volume ls'
+alias dtop='docker top'
+alias dstat='docker stats --format "table \{\{.Name}}\t\{\{.CPUPerc\}\}\t\{\{.MemPerc\}\}\ | {\{.MemUsage\}\}\t\{\{.BlockIO\}\}\t\{\{.NetIO\}\}"'
+
+
 {{ if eq .osid "linux-arch" -}}
 alias y='yazi'
 

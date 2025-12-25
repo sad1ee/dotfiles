@@ -101,7 +101,8 @@ if command -v batcat >/dev/null 2>&1; then
   fi
 fi
 
-chsh -s $(which zsh)
+[ "$SHELL" != "$(command -v zsh)" ] &&
+  chsh -s $(which zsh)
 
 rbw_path=$(command -v rbw 2>/dev/null || true)
 
