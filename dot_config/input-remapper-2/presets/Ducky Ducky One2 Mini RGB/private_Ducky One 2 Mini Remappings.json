@@ -1,0 +1,232 @@
+[
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 8,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "ISO_Level3_Shift + 7",
+        "name": "LEFTSHIFT + LEFTALT + 7: {",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 9,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "ISO_Level3_Shift + 8",
+        "name": "LEFTALT + LEFTSHIFT + 8: [",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 10,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "ISO_Level3_Shift + 9",
+        "name": "LEFTSHIFT + LEFTALT + 9: ]",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 11,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "ISO_Level3_Shift + 0",
+        "name": "LEFTALT + LEFTSHIFT + 0: }",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 12,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "ISO_Level3_Shift + ssharp",
+        "name": "LEFTSHIFT + LEFTALT + MINUS: \\",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 27,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "ISO_Level3_Shift + plus",
+        "name": "LEFTALT + LEFTSHIFT + RIGHTBRACE: ~",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 35,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFT",
+        "name": "LEFTSHIFT + LEFTALT + H: Left",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 36,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_DOWN",
+        "name": "LEFTSHIFT + LEFTALT + J: Down",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 37,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_UP",
+        "name": "LEFTSHIFT + LEFTALT + K: Up",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 56,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            },
+            {
+                "type": 1,
+                "code": 38,
+                "origin_hash": "08f6ddf02f4bb39d9c6622ff7a2748e8"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_RIGHT",
+        "name": "LEFTSHIFT + LEFTALT + L: Right",
+        "mapping_type": "key_macro"
+    }
+]

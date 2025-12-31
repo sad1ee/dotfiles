@@ -1,6 +1,7 @@
 {
   "version": "2.2.0",
   "autoload": {
-    "AT Translated Set 2 keyboard": "Laptop Remappings"
+    "AT Translated Set 2 keyboard": "Laptop Remappings",
+    "Ducky Ducky One2 Mini RGB": "Ducky One 2 Mini Remappings"
   }
 }

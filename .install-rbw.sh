@@ -75,8 +75,8 @@ setup_age() {
   mkdir -p "${HOME}/.config/age"
   old_umask=$(umask)
   umask 077
-  echo "[\"$(rbw get "KEY - AGE - sad1ee" --field publickey)\"]" >${HOME}/.config/age/public.txt
-  rbw get "KEY - AGE - sad1ee" --field privatekey >${HOME}/.config/age/private.txt
+  rbw get "KEY - AGE - sad1ee" --field publickey >"${HOME}/.config/age/public.txt"
+  rbw get "KEY - AGE - sad1ee" --field privatekey >"${HOME}/.config/age/private.txt"
   umask "$old_umask"
 }
 
