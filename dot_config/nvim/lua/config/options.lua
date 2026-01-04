@@ -3,9 +3,3 @@
 -- Add any additional options here
 
 vim.opt.colorcolumn = "88"
-
--- vim.filetype.add({
---   pattern = {
---     [".*%-docker%-compose%.yml%.j2"] = "yaml.docker-compose.jinja",
---   },
--- })

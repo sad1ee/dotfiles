@@ -1,5 +1,4 @@
 return {
-  {
-    "HiPhish/jinja.vim",
-  },
+	{ "HiPhish/jinja.vim" },
+	-- { "nextmn/vim-yaml-jinja" },
 }

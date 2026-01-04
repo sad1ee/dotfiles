@@ -6,8 +6,6 @@ source "/usr/share/zinit/zinit.zsh"
 source "${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git/zinit.zsh"
 {{ end -}}
 
-export ZSH_COMPDUMP="${XDG_CACHE_HOME}/zsh/cache/.zcompdump"
-
 # Zinit plugins
 zinit light zsh-users/zsh-completions
 {{ if eq .osid "linux-arch" -}}
@@ -83,8 +81,6 @@ alias dnls='docker network ls'
 alias dvls='docker volume ls'
 alias dtop='docker top'
 alias dstat={{ `'docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}} | {{.MemUsage}}\t{{.BlockIO}}\t{{.NetIO}}"'` }}
-
-
 {{ if eq .osid "linux-arch" -}}
 alias y='yazi'
 
