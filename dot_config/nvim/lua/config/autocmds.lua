@@ -8,11 +8,21 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { "*.yml.j2", "*.yaml.j2" },
-	command = "setlocal filetype=yaml.jinja",
+  pattern = "*.yml.j2",
+  command = "setlocal filetype=yaml",
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = "*.compose.yml.j2",
-	command = "setlocal filetype=yaml.docker-compose",
+  pattern = "*.yaml.j2",
+  command = "setlocal filetype=yaml",
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.compose.yml.j2",
+  command = "setlocal filetype=yaml.docker-compose",
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.compose.yml",
+  command = "setlocal filetype=yaml.docker-compose",
 })

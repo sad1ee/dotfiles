@@ -86,7 +86,7 @@ arch)
   rbw_login
   setup_age
   ;;
-ubuntu)
+ubuntu | debian)
   install_ubuntu
   rbw_login
   setup_age
