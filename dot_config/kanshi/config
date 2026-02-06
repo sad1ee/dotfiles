@@ -22,6 +22,20 @@ output "BOE 0x0BCA Unknown" {
   alias $INTERNAL
 }
 
+output "LG Electronics LG TV SSCR2 0x01010101" {
+  mode 3840x2160@60.00000
+  position 1128,0
+  transform normal
+  scale 2
+  alias $TV
+}
+
+profile tv {
+  output $INTERNAL disable
+  output $TV enable
+  exec uwsm app -- $HOME/.config/hypr/scripts/move-workspaces.sh "Acer Technologies G276HL LW9EE0298521"
+}
+
 profile mom {
   output $INTERNAL disable
   output $MOM enable
