@@ -1,3 +1,4 @@
 {{- if eq .osid "linux-ubuntu" -}}
 {{ (rbwFields "KEY - SSH - personal").publickey.value }}
+{{ (rbwFields "KEY - SSH - opnsense").publickey.value }}
 {{- end }}
